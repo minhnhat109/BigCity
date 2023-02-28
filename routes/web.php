@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/',[\App\Http\Controllers\Admin\RoomCategoryController::class, 'index']);
 
 Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/room-category'], function() {
@@ -29,8 +29,8 @@ Route::group(['prefix' => '/admin'], function() {
     Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
 });
 
-Route::get('/admin/login', [\App\Http\Controllers\AdminController::class, 'viewLogin']);
-Route::post('/admin/login', [\App\Http\Controllers\AdminController::class, 'actionLogin']);
+Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'viewLogin']);
+Route::post('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'actionLogin']);
 
 Route::group(['prefix' => 'laravel-filemanager',], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

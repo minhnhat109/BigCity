@@ -44,14 +44,6 @@ return [
             'driver' => 'session',
             'provider' => 'admin',
         ],
-        'chu_tro' => [
-            'driver' => 'session',
-            'provider' => 'chu_tro',
-        ],
-        'customer' => [
-            'driver' => 'session',
-            'provider' => 'customer',
-        ],
     ],
 
     /*
@@ -79,14 +71,6 @@ return [
         'admin' => [
             'driver'    => 'eloquent',
             'model'     => App\Models\Admin::class,
-        ],
-        'chu_tro' => [
-            'driver'    => 'eloquent',
-            'model'     => App\Models\ChuTro::class,
-        ],
-        'customer' => [
-            'driver'    => 'eloquent',
-            'model'     => App\Models\Customer::class,
         ],
 
         // 'users' => [

@@ -20,15 +20,12 @@ class AdminSeeder extends Seeder
         DB::table('admins')->truncate();
 
         DB::table('admins')->insert([
-            ['ma_admin' => 'AD001',
-            'ho_lot' => 'Minh',
-            'ten' => 'Nhat',
-            'email' => 'admin@admin.com',
+            [
+            'first_name' => 'Minh',
+            'last_name' => 'Nhat',
+            'email' => 'admin@gmail.com',
             'password' => bcrypt('123123123'),
-            'so_dien_thoai' => '0123456789',
-            'gioi_tinh' =>'1',
-            'is_master'=> '1',
-            'is_block'=>'0',
+            'is_open'=>'1',
             ],
         ]);
     }

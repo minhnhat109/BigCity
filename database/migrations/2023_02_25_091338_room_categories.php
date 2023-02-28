@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('room_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name_room_category');
+            $table->string('slug_room_category');
+            $table->integer('is_open');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,12 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::create('room_categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name_room_category');
-            $table->string('slug_room_category');
-            $table->integer('is_open');
-            $table->timestamps();
-        });
+
     }
 };
