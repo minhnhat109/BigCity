@@ -26,6 +26,17 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/destroy/{id}', [\App\Http\Controllers\Admin\RoomCategoryController::class, 'destroy']);
     });
 
+    Route::group(['prefix' => '/account-admin'], function() {
+        Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index']);
+        Route::post('/', [\App\Http\Controllers\Admin\AdminController::class, 'store']);
+        Route::post('/check-email', [\App\Http\Controllers\Admin\AdminController::class, 'checkemail']);
+        Route::get('/get-data', [\App\Http\Controllers\Admin\AdminController::class, 'getData']);
+        Route::get('/update-status/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'updateStatus']);
+        Route::get('/edit/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'edit']);
+        Route::post('/update', [\App\Http\Controllers\Admin\AdminController::class, 'update']);
+        Route::get('/destroy/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'destroy']);
+    });
+
     Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
 });
 
