@@ -37,11 +37,25 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/destroy/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'destroy']);
     });
 
-    Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
+    Route::group(['prefix' => '/landlord'], function() {
+        Route::get('/', [\App\Http\Controllers\Admin\LandlordController::class, 'index']);
+        Route::get('/get-data', [\App\Http\Controllers\Admin\LandlordController::class, 'getData']);
+        Route::get('/update-status/{id}', [\App\Http\Controllers\Admin\LandlordController::class, 'updateStatus']);
+        Route::get('/destroy/{id}', [\App\Http\Controllers\Admin\LandlordController::class, 'destroy']);
+    });
+
+    Route::get('/logout', [\App\Http\Controllers\Admin\AdminController::class, 'logout']);
+});
+
+Route::group(['prefix' => '/landlord'], function() {
+    Route::get('/logout', [\App\Http\Controllers\Admin\LandlordController::class, 'logout']);
 });
 
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'actionLogin']);
+
+Route::get('/landlord/register', [\App\Http\Controllers\Landlord\LandlordController::class, 'viewRegister']);
+Route::post('/landlord/register', [\App\Http\Controllers\Landlord\LandlordController::class, 'actionRegister']);
 
 Route::group(['prefix' => 'laravel-filemanager',], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
