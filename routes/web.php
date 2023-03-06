@@ -48,7 +48,20 @@ Route::group(['prefix' => '/admin'], function() {
 });
 
 Route::group(['prefix' => '/landlord'], function() {
-    Route::get('/logout', [\App\Http\Controllers\Admin\LandlordController::class, 'logout']);
+    Route::group(['prefix' => '/room'], function() {
+        Route::get('/', [\App\Http\Controllers\Landlord\RoomController::class, 'index']);
+        Route::post('/', [\App\Http\Controllers\Landlord\RoomController::class, 'store']);
+        Route::get('/list-room', [\App\Http\Controllers\Landlord\RoomController::class, 'viewListRoom']);
+        Route::get('/get-category', [\App\Http\Controllers\Landlord\RoomController::class, 'getCategory']);
+        Route::get('/get-data', [\App\Http\Controllers\Landlord\RoomController::class, 'getData']);
+        Route::get('/update-status/{id}', [\App\Http\Controllers\Landlord\RoomController::class, 'updateStatus']);
+        Route::get('/destroy/{id}', [\App\Http\Controllers\Landlord\RoomController::class, 'destroy']);
+        Route::get('/edit/{id}', [\App\Http\Controllers\Landlord\RoomController::class, 'edit']);
+        Route::post('/update', [\App\Http\Controllers\Landlord\RoomController::class, 'update']);
+        Route::post('/check-product-id', [\App\Http\Controllers\Landlord\RoomController::class, 'checkProuctId']);
+    });
+
+    Route::get('/logout', [\App\Http\Controllers\Landlord\LandlordController::class, 'logout']);
 });
 
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'viewLogin']);
@@ -56,6 +69,8 @@ Route::post('/admin/login', [\App\Http\Controllers\Admin\AdminController::class,
 
 Route::get('/landlord/register', [\App\Http\Controllers\Landlord\LandlordController::class, 'viewRegister']);
 Route::post('/landlord/register', [\App\Http\Controllers\Landlord\LandlordController::class, 'actionRegister']);
+Route::get('/landlord/login', [\App\Http\Controllers\Landlord\LandlordController::class, 'viewLogin']);
+Route::post('/landlord/login', [\App\Http\Controllers\Landlord\LandlordController::class, 'actionLogin']);
 
 Route::group(['prefix' => 'laravel-filemanager',], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();

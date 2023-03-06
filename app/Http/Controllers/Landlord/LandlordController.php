@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Landlord\CreateLandlordRequest;
 use App\Models\Landlord;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LandlordController extends Controller
 {
@@ -29,5 +30,29 @@ class LandlordController extends Controller
         $data['first_name']     = $firstname;
         $data['last_name']        = $lastname;
         Landlord::create($data);
+    }
+
+    public function viewLogin()
+    {
+        return view("landlord.pages.auth.login");
+    }
+
+    public function actionLogin(Request $request)
+    {
+        $checkEmail = Auth::guard('landlord')->attempt([
+            'email'         => $request->email,
+            'password'      => $request->password
+        ]);
+        if ($checkEmail) {
+            return response()->json(['status' => true]);
+        } else {
+            return response()->json(['status' => false]);
+        }
+    }
+
+    public function logout()
+    {
+        Auth::guard('landlord')->logout();
+        return redirect('/landlord/login');
     }
 }

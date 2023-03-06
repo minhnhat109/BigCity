@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
    <head>
-      @include('chu_tro.share.head')
+      @include('landlord.share.head')
    </head>
    <body>
       <!-- Wrapper Start -->
       <div class="wrapper">
-        @include('chu_tro.share.menu')
+        @include('landlord.share.menu')
       <!-- TOP Nav Bar -->
-       @include('chu_tro.share.top')
+       @include('landlord.share.top')
       <!-- TOP Nav Bar END -->
       <!-- Page Content  -->
       <div id="content-page" class="content-page">
@@ -18,7 +18,7 @@
      </div>
       <!-- Wrapper END -->
       <!-- Footer -->
-      @include('chu_tro.share.foot')
+      @include('landlord.share.foot')
       <nav class="iq-float-menu">
          <input type="checkbox" href="#" class="iq-float-menu-open" name="menu-open" id="menu-open" />
          <label class="iq-float-menu-open-button" for="menu-open">
@@ -31,13 +31,8 @@
          <button class="iq-float-menu-item bg-warning" data-toggle="tooltip" data-placement="top" title="Comming Soon"><i class="ri-palette-line"></i></button>
       </nav>
       </div>
-      <!-- Sidebar  -->
 
-      <!-- Footer END -->
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-      @include('chu_tro.share.js')
+      @include('landlord.share.js')
       @yield('js')
    </body>
 </html>
