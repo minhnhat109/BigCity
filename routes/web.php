@@ -61,6 +61,11 @@ Route::group(['prefix' => '/landlord'], function() {
         Route::post('/check-product-id', [\App\Http\Controllers\Landlord\RoomController::class, 'checkProuctId']);
     });
 
+    Route::get('/my-information', [\App\Http\Controllers\Landlord\LandlordController::class, 'viewInfor']);
+    Route::get('/my-information/data', [\App\Http\Controllers\Landlord\LandlordController::class, 'getInfor']);
+    Route::post('/my-information/update', [\App\Http\Controllers\Landlord\LandlordController::class, 'update']);
+    Route::post('/my-information/change-password', [\App\Http\Controllers\Landlord\LandlordController::class, 'changePassword']);
+
     Route::get('/logout', [\App\Http\Controllers\Landlord\LandlordController::class, 'logout']);
 });
 

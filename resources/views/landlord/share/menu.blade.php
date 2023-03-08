@@ -23,8 +23,8 @@
                    <li><a href="/landlord/room/list-room"><i class="ri-pages-line"></i>List Room</a></li>
                 </ul>
              </li>
-             <li><a href="/chu-tro/us-chu-tro/index" class="iq-waves-effect"><i class="ri-message-line"></i><span>Update Information</span></a></li>
-             <li><a href="/chu-tro/logout" class="iq-waves-effect"><i class="ri-login-box-line"></i><span>Logout</span></a></li>
+             <li><a href="/landlord/my-information" class="iq-waves-effect"><i class="ri-message-line"></i><span>Update Information</span></a></li>
+             <li><a href="/landlord/logout" class="iq-waves-effect"><i class="ri-login-box-line"></i><span>Logout</span></a></li>
           </ul>
        </nav>
        <div class="p-3"></div>

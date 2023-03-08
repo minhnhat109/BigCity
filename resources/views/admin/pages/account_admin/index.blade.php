@@ -234,7 +234,7 @@
                         if (res.status) {
                             $("#id").val(res.data.id);
                             $("#email_edit").val(res.data.email);
-                            $("#full_name_edit").val(res.data.ho_lot + ' ' + res.data.ten);
+                            $("#full_name_edit").val(res.data.first_name + ' ' + res.data.last_name);
                             $("#is_open_edit").val(res.data.is_open);
                         } else {
                             toastr.error("Account does not exist!");

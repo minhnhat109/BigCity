@@ -4,7 +4,7 @@ namespace App\Http\Requests\Landlord;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateLandlordRequest extends FormRequest
+class ChangePasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,8 @@ class UpdateLandlordRequest extends FormRequest
     public function rules()
     {
         return [
-            'full_name'             =>      'required|min:5|max:255',
-            'email'                 =>      'required|email|unique:landlords,email,'. $this->id,
-            'address'               =>      'required|max:255',
-            'phone_number'          =>      'required|digits:10|unique:landlords,phone_number,'. $this->id,
+            'password'              =>      'required|min:5|max:30',
+            're_password'           =>      'required|same:password',
         ];
     }
 
@@ -37,18 +35,15 @@ class UpdateLandlordRequest extends FormRequest
             'required'      =>  ':attribute cannot be left blank',
             'max'           =>  ':attribute too long',
             'min'           =>  ':attribute too short',
-            'unique'        =>  ':attribute already exist',
-            'digits'        =>  ':attribute must have 10 numbers',
+            'same'          =>  ':attribute and the password is not the same',
         ];
     }
 
     public function attributes()
     {
         return [
-            'full_name'         =>  'Full name',
-            'email'             =>  'Email',
-            'address'           =>  'Address',
-            'phone_number'      =>  'Phone Number',
+            'password'          =>  'Password',
+            're_password'       =>  'Repeat password',
         ];
     }
 }

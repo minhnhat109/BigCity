@@ -78,6 +78,11 @@
                                                 <button id="registerLandlord" type="button"
                                                     class="btn btn-primary btn-lg ms-2">Register</button>
                                             </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-12 text-center">
+                                                    <span>Have already an account? <a href="/landlord/login">Login </a></span>
+                                                </div>
+                                            </div>
                                     </form>
                                 </div>
                             </div>

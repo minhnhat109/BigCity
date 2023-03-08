@@ -46,6 +46,11 @@
                                 <div class="d-inline-block w-100">
                                     <button type="button" id="login" class="btn btn-primary float-right ml-3">Login</button>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <span>Not a member? <a href="/landlord/register">Register </a></span>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

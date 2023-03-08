@@ -94,6 +94,8 @@
          $(document).ready(function() {
             CKEDITOR.replace('detail_description');
             CKEDITOR.replace('short_description');
+
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
