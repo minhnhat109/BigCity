@@ -69,6 +69,12 @@ Route::group(['prefix' => '/landlord'], function() {
     Route::get('/logout', [\App\Http\Controllers\Landlord\LandlordController::class, 'logout']);
 });
 
+Route::group(['prefix' => '/home'], function() {
+    Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index']);
+    Route::get('/get-data-room', [\App\Http\Controllers\User\HomeController::class, 'getDataRoom']);
+    Route::get('/room-detail/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewRoomDetail']);
+});
+
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'actionLogin']);
 

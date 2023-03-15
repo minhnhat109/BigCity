@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\LoaiPhong;
+use App\Models\RoomCategory;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,8 +17,6 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // $loaiPhong = LoaiPhong::where('is_open',1)->get();
-        // View()->share('loaiPhong', $loaiPhong);
-        // dd($loaiPhong);
+
     }
 }

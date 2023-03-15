@@ -10,10 +10,10 @@ class CustomerMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        $check = Auth::guard('customer')->check();
+        $check = Auth::guard('user')->check();
         if($check) {
-            $user = Auth::guard('customer')->user();
-            if($user->is_active == 0) {
+            $user = Auth::guard('user')->user();
+            if($user->is_open == 0) {
                 toastr()->error('Tài khoản của bạn chưa được kích hoạt !');
                 return redirect('/');
             }

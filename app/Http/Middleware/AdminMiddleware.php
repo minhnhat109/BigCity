@@ -13,7 +13,7 @@ class AdminMiddleware
         $check = Auth::guard('admin')->check();
         if($check) {
             $admin = Auth::guard('admin')->user();
-            if($admin->is_block) {
+            if($admin->is_open == 0) {
                 toastr()->error('Tài khoản của bạn đã bị khóa bởi hệ thống!');
                 return redirect('/admin/login');
             }
