@@ -72,7 +72,9 @@ Route::group(['prefix' => '/landlord'], function() {
 Route::group(['prefix' => '/home'], function() {
     Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index']);
     Route::get('/get-data-room', [\App\Http\Controllers\User\HomeController::class, 'getDataRoom']);
+    Route::get('/get-data-category', [\App\Http\Controllers\User\HomeController::class, 'getDataCategory']);
     Route::get('/room-detail/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewRoomDetail']);
+    Route::post('/search', [\App\Http\Controllers\User\HomeController::class, 'search']);
 });
 
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'viewLogin']);
