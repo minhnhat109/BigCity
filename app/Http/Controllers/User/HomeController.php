@@ -49,6 +49,7 @@ class HomeController extends Controller
                 break;
             case 2 :
                 $room = $room->where('price', '<=', '6000000');
+                $room = $room->where('price', '>', '3000000');
                 break;
             case 3 :
                 $room = $room->where('price', '>', '6000000');

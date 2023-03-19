@@ -1,9 +1,9 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Vito - Responsive Bootstrap 4 Admin Dashboard Template</title>
+<title>BigCity</title>
 <!-- Favicon -->
-<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="icon" type="image/x-icon" href="/assets_user/assets/favicon.ico" />
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 <!-- Typography CSS -->

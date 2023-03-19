@@ -5,12 +5,12 @@
         <div class="col-md-1"></div>
         <div class="col-md-4">
             <div class="card h-100">
-                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                <img class="card-img-top" src="{{ $room->image}}" alt="..." style="width: 545px; height: 399px;"/>
             </div>
         </div>
         <div class="col-md-1">
         </div>
-        <div class="col-md-6 ">
+        <div class="col-md-5">
             <div class="">
                 <h5 class="fw-bolder">{{$room->name}}</h5>
                 <h5 class="text-start">Price: {{number_format($room->price, 0)}} VNĐ</h5>
@@ -25,6 +25,8 @@
                 <div class="text-start"><a class="btn btn-outline-dark mt-auto" href="#">Book now</a>
                 </div>
             </div>
+        </div>
+        <div class="col-md-1">
         </div>
         @endif
     </div>

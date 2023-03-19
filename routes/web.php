@@ -77,6 +77,11 @@ Route::group(['prefix' => '/home'], function() {
     Route::post('/search', [\App\Http\Controllers\User\HomeController::class, 'search']);
 });
 
+Route::get('/register', [\App\Http\Controllers\User\UserController::class, 'viewRegister']);
+Route::post('/register', [\App\Http\Controllers\User\UserController::class, 'actionRegister']);
+Route::get('/login', [\App\Http\Controllers\User\UserController::class, 'viewLogin']);
+Route::post('/login', [\App\Http\Controllers\User\UserController::class, 'actionLogin']);
+
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'actionLogin']);
 

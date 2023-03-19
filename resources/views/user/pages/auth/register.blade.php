@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BigCity</title>
-    <<link rel="icon" type="image/x-icon" href="/assets_user/assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/assets_user/assets/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/typography.css">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -41,11 +41,6 @@
                                     class="form-control form-control-lg" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="form3Example8">Address</label>
-                                <input type="text" id="address"
-                                    class="form-control form-control-lg" />
-                            </div>
-                            <div class="form-outline mb-4">
                                 <label class="form-label" for="form3Example8">Password</label>
                                 <input type="password" id="password"
                                     class="form-control form-control-lg" />
@@ -56,12 +51,12 @@
                                     class="form-control form-control-lg" />
                             </div>
                             <div class="d-inline-block w-100">
-                                <button type="button" id="registerLandlord"
+                                <button type="button" id="register"
                                     class="btn btn-primary float-right ml-3 px-4">Register</button>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <span>Have already an account? <a href="/landlord/login">Login </a></span>
+                                    <span>Have already an account? <a href="/login">Login </a></span>
                                 </div>
                             </div>
                         </form>
@@ -121,28 +116,23 @@
                 }
             });
 
-            $('#resetForm').click(function() {
-                $("#formSingUp").trigger("reset");
-            });
-
-            $('#registerLandlord').click(function() {
+            $('#register').click(function() {
                 var payload = {
                     'email': $("#email").val(),
                     'full_name': $("#full_name").val(),
                     'phone_number': $("#phone_number").val(),
-                    'address': $("#address").val(),
                     'password': $("#password").val(),
                     're_password': $("#re_password").val(),
                 };
 
                 $.ajax({
-                    url: '/landlord/register',
+                    url: '/register',
                     type: 'post',
                     data: payload,
                     success: function(res) {
                         toastr.success("Registered successfully");
                         setTimeout(() => {
-                            window.location.href = '/landlord/login';
+                            window.location.href = '/login';
                         }, 900);
                     },
                     error: function(res) {

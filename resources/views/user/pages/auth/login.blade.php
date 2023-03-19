@@ -1,67 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>BigCity</title>
-    <<link rel="icon" type="image/x-icon" href="/assets_user/assets/favicon.ico" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets_user/assets/favicon.ico" />
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!-- Typography CSS -->
     <link rel="stylesheet" href="/assets/css/typography.css">
+    <!-- Style CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Responsive CSS -->
     <link rel="stylesheet" href="/assets/css/responsive.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
+    <!-- loader Start -->
     <div id="loading">
         <div id="loading-center">
         </div>
     </div>
+    <!-- loader END -->
+    <!-- Sign in Start -->
     <section class="sign-in-page">
         <div class="container bg-white mt-5 p-0">
             <div class="row no-gutters">
                 <div class="col-sm-6 align-self-center">
                     <div class="sign-in-from">
-                        <h1 class="mb-0 dark-signin">Register</h1>
-                        <form class="mt-3 mb-4">
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="form3Example8">Full Name</label>
-                                <input type="text" id="full_name"
-                                    class="form-control form-control-lg" />
+                        <h1 class="mb-0 dark-signin">Login</h1>
+                        <p>Enter your email address and password to access admin panel.</p>
+                        <form class="mt-4">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                <input type="email" class="form-control mb-0" id="email" name="email"
+                                    placeholder="Enter your email or phone number">
                             </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="form3Example8">Email</label>
-                                <input type="email" id="email"
-                                    class="form-control form-control-lg" />
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="form3Example8">Phone Number</label>
-                                <input type="text" id="phone_number"
-                                    class="form-control form-control-lg" />
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="form3Example8">Address</label>
-                                <input type="text" id="address"
-                                    class="form-control form-control-lg" />
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="form3Example8">Password</label>
-                                <input type="password" id="password"
-                                    class="form-control form-control-lg" />
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="form3Example8">Repeat Password</label>
-                                <input type="password" id="re_password"
-                                    class="form-control form-control-lg" />
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control mb-0" id="password" name="password"
+                                    placeholder="Enter password">
+                                <span id="checkpassword"></span>
                             </div>
                             <div class="d-inline-block w-100">
-                                <button type="button" id="registerLandlord"
-                                    class="btn btn-primary float-right ml-3 px-4">Register</button>
+                                <button type="button" id="login"
+                                    class="btn btn-primary float-right ml-3">Login</button>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <span>Have already an account? <a href="/landlord/login">Login </a></span>
+                                    <span>Not a member? <a href="/register">Register </a></span>
                                 </div>
                             </div>
                         </form>
@@ -97,20 +89,36 @@
             </div>
         </div>
     </section>
+    <!-- Sign in END -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Appear JavaScript -->
     <script src="/assets/js/jquery.appear.js"></script>
+    <!-- Countdown JavaScript -->
     <script src="/assets/js/countdown.min.js"></script>
+    <!-- Counterup JavaScript -->
     <script src="/assets/js/waypoints.min.js"></script>
     <script src="/assets/js/jquery.counterup.min.js"></script>
+    <!-- Wow JavaScript -->
     <script src="/assets/js/wow.min.js"></script>
+    <!-- Apexcharts JavaScript -->
     <script src="/assets/js/apexcharts.js"></script>
+    <!-- Slick JavaScript -->
     <script src="/assets/js/slick.min.js"></script>
+    <!-- Select2 JavaScript -->
     <script src="/assets/js/select2.min.js"></script>
+    <!-- Owl Carousel JavaScript -->
     <script src="/assets/js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup JavaScript -->
     <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Smooth Scrollbar JavaScript -->
     <script src="/assets/js/smooth-scrollbar.js"></script>
+    <!-- Chart Custom JavaScript -->
+    {{-- <script src="/assets/js/chart-custom.js"></script> --}}
+    <!-- Custom JavaScript -->
     <script src="/assets/js/custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
@@ -121,29 +129,28 @@
                 }
             });
 
-            $('#resetForm').click(function() {
-                $("#formSingUp").trigger("reset");
-            });
-
-            $('#registerLandlord').click(function() {
+            $("#login").click(function() {
                 var payload = {
                     'email': $("#email").val(),
-                    'full_name': $("#full_name").val(),
-                    'phone_number': $("#phone_number").val(),
-                    'address': $("#address").val(),
                     'password': $("#password").val(),
-                    're_password': $("#re_password").val(),
                 };
-
                 $.ajax({
-                    url: '/landlord/register',
+                    url: '/login',
                     type: 'post',
                     data: payload,
                     success: function(res) {
-                        toastr.success("Registered successfully");
-                        setTimeout(() => {
-                            window.location.href = '/landlord/login';
-                        }, 900);
+                        if (res.status) {
+                            toastr.success("Login Successful");
+                            window.setTimeout(() => {
+                                window.location.href = "/home";
+                            }, 500);
+                        } else {
+                            toastr.error('Login failed!');
+                            $("#checkpassword").text(
+                                "The password does not exist or you entered it incorrectly");
+                            $("#checkpassword").addClass("text-danger");
+                            $("#password").addClass("border border-danger");
+                        }
                     },
                     error: function(res) {
                         var listError = res.responseJSON.errors;
@@ -154,6 +161,11 @@
                 });
             });
 
+            $('#password').keyup(function(e) {
+                if (e.keyCode == 13) {
+                    $("#login").click()
+                }
+            });
         });
     </script>
 </body>
