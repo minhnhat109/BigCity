@@ -17,16 +17,19 @@
                 </li> --}}
             </ul>
             <form class="">
-                <div class="float-end">
-                    <a class="navbar-brand text-white m-3" href="/login"><i class="bi-cart-fill me-1"></i> Cart</a>
-                    <a class="navbar-brand text-white m-3" href="/login"><i class="bi bi-person"></i> My account</a>
-                    <a class="navbar-brand text-white m-3" href="/login"><i class="bi bi-box-arrow-right"></i> Logout</a>
-                </div>
-                {{-- <div>
+                @if (Auth::guard('user')->user())
+                    <div class="float-end">
+                        <a class="navbar-brand text-white m-3" href="/login"><i class="bi-cart-fill me-1"></i> Cart</a>
+                        <a class="navbar-brand text-white m-3" href="/login"><i class="bi bi-person"></i> My account</a>
+                        <a class="navbar-brand text-white m-3" href="/login"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                @else
+                <div>
                     <a class="navbar-brand text-white me-1" href="/login">Login</a>
                     <span class="text-white">|</span>
                     <a class="navbar-brand text-white ms-1" href="/register">Register</a>
-                </div> --}}
+                </div>
+                @endif
             </form>
         </div>
     </div>

@@ -75,6 +75,10 @@ Route::group(['prefix' => '/home'], function() {
     Route::get('/get-data-category', [\App\Http\Controllers\User\HomeController::class, 'getDataCategory']);
     Route::get('/room-detail/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewRoomDetail']);
     Route::post('/search', [\App\Http\Controllers\User\HomeController::class, 'search']);
+    Route::get('/payment/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewPayment']);
+    Route::get('/momo-payment/{id}', [\App\Http\Controllers\User\PaymentController::class, 'momoPayment']);
+    Route::get('/thanks', [\App\Http\Controllers\User\PaymentController::class, 'viewThank']);
+    Route::post('/create-payment', [\App\Http\Controllers\User\PaymentController::class, 'createPayment']);
 });
 
 Route::get('/register', [\App\Http\Controllers\User\UserController::class, 'viewRegister']);

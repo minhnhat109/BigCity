@@ -22,7 +22,7 @@
                  </div>
             </div>
             <div class="row p-4 mt-5 pt-0 border-top-0 bg-transparent">
-                <div class="text-start"><a class="btn btn-outline-dark mt-auto" href="#">Book now</a>
+                <div class="text-start"><a class="btn btn-outline-dark mt-auto" href="/home/payment/{{$room->id}}"  >Book now</a>
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ use App\Models\Landlord;
 use App\Models\Room;
 use App\Models\RoomCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -63,4 +64,12 @@ class HomeController extends Controller
             ]);
         }
     }
+
+    public function viewPayment($id){
+        $room = Room::where('is_open', 1)
+                    ->where('id', $id)
+                    ->first();
+        return view('user.pages.payment', compact('room'));
+    }
+
 }

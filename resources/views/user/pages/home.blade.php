@@ -79,7 +79,6 @@
                     'id_category': $('#selectCategory').val(),
                     'price': $('#selectPrice').val(),
                 };
-                console.log(payload);
                 $.ajax({
                     url: '/home/search',
                     type: 'post',
@@ -138,7 +137,7 @@
                 content += '<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">'
                 content +=
                     '<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/home/room-detail/' +
-                    value.id + '">View options</a>'
+                    value.id + '">View details</a>'
                 content += '</div>'
                 content += '</div>'
                 content += '</div>'
