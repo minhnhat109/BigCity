@@ -1,6 +1,6 @@
 <div class="iq-sidebar">
     <div class="iq-sidebar-logo d-flex justify-content-between">
-        <a href="/assets/index.html">
+        <a href="/admin/landlord">
             <img src="/assets/images/logo.gif" class="img-fluid" alt="">
             <span class="text-capitalize">BigCity</span>
         </a>
@@ -22,6 +22,8 @@
                             class="ri-calendar-2-line"></i><span>Room Category Management</span></a></li>
                 <li><a href="/admin/landlord" class="iq-waves-effect"><i
                             class="ri-message-line"></i><span>Landlord Management</span></a></li>
+                <li><a href="/admin/user" class="iq-waves-effect"><i
+                    class="ri-message-line"></i><span>User Management</span></a></li>
                 <li><a href="/admin/logout" class="iq-waves-effect"><i
                             class="ri-login-box-line"></i><span>Logout</span></a></li>
             </ul>

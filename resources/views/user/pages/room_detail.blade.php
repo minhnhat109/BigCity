@@ -4,8 +4,8 @@
         @if (isset($room))
         <div class="col-md-1"></div>
         <div class="col-md-4">
-            <div class="card h-100">
-                <img class="card-img-top" src="{{ $room->image}}" alt="..." style="width: 545px; height: 399px;"/>
+            <div class="h-100">
+                <img class="card-img-top" src="{{ $room->image}}" alt="..." style="width: 450px; height: 300px;"/>
             </div>
         </div>
         <div class="col-md-1">

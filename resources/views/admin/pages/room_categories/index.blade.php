@@ -203,8 +203,8 @@
                     type        : 'get',
                     success     : function(res) {
                         if (res.status) {
-                            toastr.success("Updated catalog status!");
                             loadTable();
+                            toastr.success("Updated catalog status!");
                         } else {
                             toastr.error("Error!!");
                         }

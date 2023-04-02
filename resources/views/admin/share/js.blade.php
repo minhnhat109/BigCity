@@ -1,6 +1,4 @@
-@jquery
-@toastr_js
-@toastr_render
+
 <script src="/assets/js/jquery.min.js"></script>
 <!-- Rtl and Darkmode -->
 <script src="/assets/js/rtl.js"></script>
@@ -34,3 +32,5 @@
 <script src="/assets/js/chart-custom.js"></script>
 <!-- Custom JavaScript -->
 <script src="/assets/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+

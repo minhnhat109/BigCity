@@ -13,4 +13,6 @@
 <!-- Responsive CSS -->
 <link rel="stylesheet" href="/assets/css/responsive.css">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-@toastr_css
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+

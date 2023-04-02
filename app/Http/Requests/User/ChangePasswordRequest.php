@@ -4,7 +4,7 @@ namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateUserRequest extends FormRequest
+class ChangePasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,8 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'full_name'             =>      'required|min:5|max:255',
-            'email'                 =>      'required|email|unique:landlords,email,'. $this->id,
-            'phone_number'          =>      'required|digits:10|unique:landlords,phone_number,'. $this->id,
+            'password'              =>      'required|min:5|max:30',
+            're_password'           =>      'required|same:password',
         ];
     }
 
@@ -36,17 +35,15 @@ class UpdateUserRequest extends FormRequest
             'required'      =>  ':attribute cannot be left blank',
             'max'           =>  ':attribute too long',
             'min'           =>  ':attribute too short',
-            'unique'        =>  ':attribute already exist',
-            'digits'        =>  ':attribute must have 10 numbers',
+            'same'          =>  ':attribute and the password is not the same',
         ];
     }
 
     public function attributes()
     {
         return [
-            'full_name'         =>  'Full name',
-            'email'             =>  'Email',
-            'phone_number'      =>  'Phone Number',
+            'password'          =>  'Password',
+            're_password'       =>  'Repeat password',
         ];
     }
 }

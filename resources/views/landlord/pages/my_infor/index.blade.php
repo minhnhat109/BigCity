@@ -154,7 +154,7 @@
 
             $("#updateLandlord").click(function() {
                 var payload = {
-                    "id": "1",
+                    "id": $("#id").val(),
                     "email": $("#email").val(),
                     "full_name": $("#full_name").val(),
                     "phone_number": $("#phone_number").val(),

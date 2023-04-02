@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         @include('user.share.head')
-
+        @yield('head')
     </head>
     <body>
         @include('user.share.menu')

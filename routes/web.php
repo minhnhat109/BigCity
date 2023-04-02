@@ -44,6 +44,13 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/destroy/{id}', [\App\Http\Controllers\Admin\LandlordController::class, 'destroy']);
     });
 
+    Route::group(['prefix' => '/user'], function() {
+        Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index']);
+        Route::get('/get-data', [\App\Http\Controllers\Admin\UserController::class, 'getData']);
+        Route::get('/update-status/{id}', [\App\Http\Controllers\Admin\UserController::class, 'updateStatus']);
+        Route::get('/destroy/{id}', [\App\Http\Controllers\Admin\UserController::class, 'destroy']);
+    });
+
     Route::get('/logout', [\App\Http\Controllers\Admin\AdminController::class, 'logout']);
 });
 
@@ -75,10 +82,19 @@ Route::group(['prefix' => '/home'], function() {
     Route::get('/get-data-category', [\App\Http\Controllers\User\HomeController::class, 'getDataCategory']);
     Route::get('/room-detail/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewRoomDetail']);
     Route::post('/search', [\App\Http\Controllers\User\HomeController::class, 'search']);
+});
+
+Route::group(['prefix' => '/home'], function() {
     Route::get('/payment/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewPayment']);
     Route::get('/momo-payment/{id}', [\App\Http\Controllers\User\PaymentController::class, 'momoPayment']);
     Route::get('/thanks', [\App\Http\Controllers\User\PaymentController::class, 'viewThank']);
     Route::post('/create-payment', [\App\Http\Controllers\User\PaymentController::class, 'createPayment']);
+    Route::get('/my-account', [\App\Http\Controllers\User\UserController::class, 'viewMyAccount']);
+    Route::get('/get-data-my-account', [\App\Http\Controllers\User\UserController::class, 'getDataMyAccount']);
+    Route::post('/my-account/change-password', [\App\Http\Controllers\User\UserController::class, 'changePassword']);
+    Route::post('/my-account/update', [\App\Http\Controllers\User\UserController::class, 'updateInfor']);
+    Route::get('/logout', [\App\Http\Controllers\User\UserController::class, 'logout']);
+    Route::get('/get-data-transaction', [\App\Http\Controllers\User\PaymentController::class, 'getDataTransaction']);
 });
 
 Route::get('/register', [\App\Http\Controllers\User\UserController::class, 'viewRegister']);

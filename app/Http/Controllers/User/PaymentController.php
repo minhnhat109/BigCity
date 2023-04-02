@@ -129,4 +129,15 @@ class PaymentController extends Controller
             'status'  => false
         ]);
     }
+
+    public function getDataTransaction(){
+        $user = Auth::guard('user')->user();
+        $data = Payment::where("payments.user_id", $user->id)
+                    ->join("rooms", "rooms.id", "payments.room_id")
+                    ->select("payments.*", "rooms.name")
+                    ->get();
+        return response()->json([
+            'data' => $data
+        ]);
+    }
 }

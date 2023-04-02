@@ -3,34 +3,31 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Landlord\CreateLandlordRequest;
-use App\Http\Requests\Landlord\UpdateLandlordRequest;
-use App\Models\Landlord;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LandlordController extends Controller
+class UserController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.landlord.index');
+        return view('admin.pages.user.index');
     }
 
     public function getData()
     {
-        $landlord = Landlord::all();
+        $user = User::all();
         return response()->json([
-            'data'  => $landlord,
+            'data'  => $user,
         ]);
     }
 
     public function updateStatus($id)
     {
-        $landlord = Landlord::find($id);
-
-        if ($landlord) {
-            $landlord->is_open = !$landlord->is_open;
-            $landlord->save();
+        $user = User::find($id);
+        if ($user) {
+            $user->is_open = !$user->is_open;
+            $user->save();
 
             return response()->json([
                 'status'  => true,
@@ -44,7 +41,7 @@ class LandlordController extends Controller
 
     public function destroy($id)
     {
-        $landlord = Landlord::find($id);
+        $landlord = User::find($id);
         if ($landlord) {
             $landlord->delete();
 

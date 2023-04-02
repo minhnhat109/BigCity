@@ -1,6 +1,6 @@
 <div class="iq-sidebar">
     <div class="iq-sidebar-logo d-flex justify-content-between">
-       <a href="/assets/index.html">
+       <a href="/landlord/room">
        <img src="/assets/images/logo.gif" class="img-fluid" alt="">
        <span class="text-capitalize">BigCity</span>
        </a>
