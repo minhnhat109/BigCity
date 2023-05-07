@@ -115,6 +115,7 @@ class PaymentController extends Controller
                                     ->first();
         if ($payment_momo) {
             Payment::create([
+                
                 'room_id' => $request->room_id,
                 'user_id' => $user_id,
                 'transaction_id' => $payment_momo->trans_id,

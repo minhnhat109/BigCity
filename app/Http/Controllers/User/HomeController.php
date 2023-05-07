@@ -12,9 +12,14 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function index(){
-        return view('user.pages.home');
+        return view('user.pages_new.home_new');
     }
-
+    // public function test(){
+    //     return view('user.master_new');
+    // }
+    // public function test1(){
+    //     return view('user.pages.home_new');
+    // }
     public function getDataRoom(){
         $room = Room::where('is_open', 1)->get();
         return response()->json([
@@ -33,7 +38,7 @@ class HomeController extends Controller
         $room = Room::where('is_open', 1)
                     ->where('id', $id)
                     ->first();
-        return view('user.pages.room_detail', compact('room'));
+        return view('user.pages_new.room_detail', compact('room'));
     }
 
     public function search(Request $request){
@@ -69,7 +74,7 @@ class HomeController extends Controller
         $room = Room::where('is_open', 1)
                     ->where('id', $id)
                     ->first();
-        return view('user.pages.payment', compact('room'));
+        return view('user.pages_new.payment', compact('room'));
     }
 
 }

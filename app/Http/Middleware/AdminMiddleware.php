@@ -14,12 +14,12 @@ class AdminMiddleware
         if($check) {
             $admin = Auth::guard('admin')->user();
             if($admin->is_open == 0) {
-                toastr()->error('Tài khoản của bạn đã bị khóa bởi hệ thống!');
+                toastr()->success('Your account has been locked by the system!');
                 return redirect('/admin/login');
             }
             return $next($request);
         } else {
-            toastr()->error('Bạn cần phải đăng nhập!');
+            toastr()->success('You need to login!');
             return redirect('/admin/login');
         }
     }

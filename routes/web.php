@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[\App\Http\Controllers\Admin\RoomCategoryController::class, 'index']);
+Route::get('/',[\App\Http\Controllers\User\HomeController::class, 'index']);
+Route::get('/test',[\App\Http\Controllers\User\HomeController::class, 'test']);
+Route::get('/test1',[\App\Http\Controllers\User\HomeController::class, 'test1']);
 
-Route::group(['prefix' => '/admin'], function() {
+
+Route::group(['prefix' => '/admin', 'middleware' => 'AdminMiddleware'], function() {
     Route::group(['prefix' => '/room-category'], function() {
         Route::get('/', [\App\Http\Controllers\Admin\RoomCategoryController::class, 'index']);
         Route::post('/', [\App\Http\Controllers\Admin\RoomCategoryController::class, 'store']);
@@ -54,7 +57,7 @@ Route::group(['prefix' => '/admin'], function() {
     Route::get('/logout', [\App\Http\Controllers\Admin\AdminController::class, 'logout']);
 });
 
-Route::group(['prefix' => '/landlord'], function() {
+Route::group(['prefix' => '/landlord', 'middleware' => 'LandlordMiddleware'], function() {
     Route::group(['prefix' => '/room'], function() {
         Route::get('/', [\App\Http\Controllers\Landlord\RoomController::class, 'index']);
         Route::post('/', [\App\Http\Controllers\Landlord\RoomController::class, 'store']);
@@ -84,17 +87,19 @@ Route::group(['prefix' => '/home'], function() {
     Route::post('/search', [\App\Http\Controllers\User\HomeController::class, 'search']);
 });
 
-Route::group(['prefix' => '/home'], function() {
+Route::group(['prefix' => '/home', 'middleware' => 'UserMiddleware'], function() {
     Route::get('/payment/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewPayment']);
     Route::get('/momo-payment/{id}', [\App\Http\Controllers\User\PaymentController::class, 'momoPayment']);
     Route::get('/thanks', [\App\Http\Controllers\User\PaymentController::class, 'viewThank']);
     Route::post('/create-payment', [\App\Http\Controllers\User\PaymentController::class, 'createPayment']);
     Route::get('/my-account', [\App\Http\Controllers\User\UserController::class, 'viewMyAccount']);
     Route::get('/get-data-my-account', [\App\Http\Controllers\User\UserController::class, 'getDataMyAccount']);
+    Route::get('/change-password', [\App\Http\Controllers\User\UserController::class, 'viewChangePass']);
     Route::post('/my-account/change-password', [\App\Http\Controllers\User\UserController::class, 'changePassword']);
     Route::post('/my-account/update', [\App\Http\Controllers\User\UserController::class, 'updateInfor']);
     Route::get('/logout', [\App\Http\Controllers\User\UserController::class, 'logout']);
     Route::get('/get-data-transaction', [\App\Http\Controllers\User\PaymentController::class, 'getDataTransaction']);
+    Route::get('/history-transaction', [\App\Http\Controllers\User\UserController::class, 'viewTransaction']);
 });
 
 Route::get('/register', [\App\Http\Controllers\User\UserController::class, 'viewRegister']);

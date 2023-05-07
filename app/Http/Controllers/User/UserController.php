@@ -58,7 +58,7 @@ class UserController extends Controller
         return redirect('/login');
     }
     public function viewMyAccount(){
-        return view('user.pages.my_account');
+        return view('user.pages_new.my_account');
     }
 
     public function getDataMyAccount(){
@@ -66,6 +66,13 @@ class UserController extends Controller
         return response()->json([
             'data' => $user
         ]);
+    }
+    public function viewChangePass(){
+        return view('user.pages_new.change_pass');
+    }
+
+    public function viewTransaction(){
+        return view('user.pages_new.history_tran');
     }
 
     public function changePassword(ChangePasswordRequest $request) {
