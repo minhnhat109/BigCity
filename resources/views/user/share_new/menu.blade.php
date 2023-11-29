@@ -34,6 +34,9 @@
                             <li><a href="/home/history-transaction">History Transaction</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="/home/blog"><i
+                        data-feather="calendar"></i><span>Blog</span></a>
+                    </li>
                 </ul>
             </div>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>

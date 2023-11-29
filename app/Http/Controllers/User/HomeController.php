@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Landlord;
 use App\Models\Room;
 use App\Models\RoomCategory;
@@ -75,6 +76,23 @@ class HomeController extends Controller
                     ->where('id', $id)
                     ->first();
         return view('user.pages_new.payment', compact('room'));
+    }
+    public function viewBlog(){
+        return view('user.pages_new.blog');
+    }
+
+    public function getDataBlog(){
+        $blog = Blog::where('is_open', 1)->get();
+        return response()->json([
+            'data'  => $blog,
+        ]);
+    }
+
+    public function viewBlogDetail($id){
+        $blog = Blog::where('is_open', 1)
+                    ->where('id', $id)
+                    ->first();
+        return view('user.pages_new.blog_detail' ,compact("blog"));
     }
 
 }
