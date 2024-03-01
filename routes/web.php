@@ -85,7 +85,7 @@ Route::group(['prefix' => '/home'], function() {
     Route::get('/get-data-category', [\App\Http\Controllers\User\HomeController::class, 'getDataCategory']);
     Route::get('/room-detail/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewRoomDetail']);
     Route::post('/search', [\App\Http\Controllers\User\HomeController::class, 'search']);
-        Route::get('/blog', [\App\Http\Controllers\User\HomeController::class, 'viewBlog']);
+    Route::get('/blog', [\App\Http\Controllers\User\HomeController::class, 'viewBlog']);
     Route::get('/get-data-blog', [\App\Http\Controllers\User\HomeController::class, 'getDataBlog']);
     Route::get('/blog-detail/{id}', [\App\Http\Controllers\User\HomeController::class, 'viewBlogDetail']);
 });

@@ -25,7 +25,7 @@
         </div>
         <div class="nav-right col-8 pull-right right-header p-0">
             <ul class="nav-menus">
-                <li class="language-nav">
+                <!-- <li class="language-nav">
                     <div class="translate_wrapper">
                         <div class="current_lang">
                             <div class="lang"><i class="flag-icon flag-icon-us"></i><span class="lang-txt">EN
@@ -48,13 +48,13 @@
                                     class="lang-txt">لعربية <span> (ae)</span></span></div>
                         </div>
                     </div>
-                </li>
-                <li> <span class="header-search"><i data-feather="search"></i></span></li>
+                </li> -->
+                <!-- <li> <span class="header-search"><i data-feather="search"></i></span></li> -->
                 <li>
                     <div class="mode"><i class="fa fa-moon-o"></i></div>
                 </li>
-                <li class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
-                            data-feather="maximize"></i></a></li>
+                <!-- <li class="maximize"><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
+                            data-feather="maximize"></i></a></li> -->
                 @if (Auth::guard('user')->user())
                     <li class="profile-nav onhover-dropdown p-0 me-0">
                         <div class="media profile-media"><img class="b-r-10"

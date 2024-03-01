@@ -64,7 +64,7 @@ class BlogSeeder extends Seeder
                 Nghe một bản nhạc hoặc đọc cuốn sách bạn yêu thích
                 Tập thiền
                 Hãy lưu lại bài viết này vì nó cực kỳ hữu ích để bạn duy trì năng lượng sống tích cực mỗi ngày! ",
-                'img'         => "https://bizcitivietnam.vn/wp-content/uploads/2023/04/230412_WEBSITE_KICH-HOAT-HANH-PHUC.png",
+                'img'         => "https://quocbaobds.com/wp-content/uploads/2020/12/khu-do-thi-la-gi.jpg",
                 'is_open'          => 1,
             ],
 

@@ -208,7 +208,6 @@
 
             $('body').on('click', '.updateStatus', function() {
                 var id = $(this).data('id');
-                console.log(123);
                 $.ajax({
                     url: '/admin/account-admin/update-status/' + id,
                     type: 'get',
@@ -267,7 +266,7 @@
                     error: function(res) {
                         var listError = res.responseJSON.errors;
                         $.each(listError, function(key, value) {
-                            toastr.error(value[0]);
+                        toastr.error(value[0]);
                         });
                     },
                 });
